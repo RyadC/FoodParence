@@ -8,13 +8,16 @@ USER node
 WORKDIR /home/node/code
 
 # We copy the package files in the working directory.
-COPY --chown=node:node package.json package-lock.json ./
+COPY --chown=node:node package*.json ./
 
 # We execute this command in the shell
-RUN npm i
+RUN npm install
 
-# We declare the PORT to expose of the container to connect or host machine
-EXPOSE 3080
+# We copy all files in the working directory.
+COPY --chown=node:node . .
+
+# We declare the PORT to expose of the container to connect or host machine (information for the devs)
+EXPOSE 5173
 
 # We execute a finally command
-CMD [ "node", "dev" ]
+CMD [ "npm", "run", "dev" ]
