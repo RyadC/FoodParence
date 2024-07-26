@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./components/Main.jsx";
 import Functioning from "./components/Functioning.jsx";
 import Root from "./components/Root.jsx";
-import Header from "./components/Header.jsx";
 import Ressources from "./components/Ressources.jsx";
 
 function App() {
